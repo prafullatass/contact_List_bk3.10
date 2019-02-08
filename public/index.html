@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Browserify Boilerplate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <article class="output">
+    <fieldset>
+        <label for="contactName"> Name :</label>
+        <input type="text" name="contactName" id="contactName">
+    </fieldset>
+    <fieldset>
+        <label for="contactAddress"> Address :</label>
+        <textarea name="contactAddress" id="contactAddress" cols="30" rows="3"></textarea>
+    </fieldset>
+    <fieldset>
+        <label for="contactPhoneNo"> Phone No. :</label>
+        <input type="text" name="contactPhoneNo" id="contactPhoneNo">
+    </fieldset>
+    <button type="submit" id = "addNewContact">Enter New Contact</button>
+    <article class="contactList">
 
     </article>
 
     <script src="bundle.js"></script>
 </body>
+
 </html>
