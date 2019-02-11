@@ -9,6 +9,8 @@
 //     }
 // ]
 import contactData from "./DataManager"
+import contactList from "./ContactList"
+
 const contactArray = () => {
     contactData.getContacts().then(contacts => {
         return contacts
@@ -16,7 +18,7 @@ const contactArray = () => {
 }
 const contactCollection = {
     view: () => {
-            return contactData.getContacts().then(contacts => {
+        return contactData.getContacts().then(contacts => {
             return contacts
         })
     },
@@ -35,7 +37,18 @@ const contactCollection = {
         }
         return contactData.createContact(newContact)
     },
-    search: (whatToSearch) => contactArray.find(contact => contact.includes(whatToSearch))
+    search: (whatToSearch) => contactArray.find(contact => contact.includes(whatToSearch)),
+    delete: () => {
+        const contactListEl = document.querySelector(".contactList")
+        contactListEl.addEventListener("click", (event) => {
+            if (event.target.id.startsWith("deleteButton--")) {
+                const contactId = event.target.id.split("--")[1]
+                contactData.deleteContact(contactId)
+                    .then(contactList)
+            }
+        })
+
+    }
 }
 
 export default contactCollection

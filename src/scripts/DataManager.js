@@ -13,6 +13,11 @@ const contactData = {
             body: JSON.stringify(orderObject)
         })
             .then(res => res.json())
+    },
+    deleteContact: (contactNo) => {
+        return fetch(`http://localhost:8088/contacts/${contactNo}`, {
+            method: "DELETE"
+        })
     }
 }
 

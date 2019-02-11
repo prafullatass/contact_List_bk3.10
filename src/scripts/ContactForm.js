@@ -10,6 +10,9 @@ const addNewContact = () => {
         const name = $("#contactName").value
         const address = $("#contactAddress").value
         const phNo = $("#contactPhoneNo").value
+        $("#contactName").value = ""
+        $("#contactAddress").value = ""
+        $("#contactPhoneNo").value = ""
         contactCollection.add(name, address, phNo).then(
             () => contactList()
         )

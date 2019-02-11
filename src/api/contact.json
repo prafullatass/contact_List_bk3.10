@@ -1,34 +1,10 @@
 {
   "contacts": [
     {
-      "id": 1,
       "name": "Praful",
-      "address": "Franklin, TN",
-      "phoneNo": "615668"
-    },
-    {
-      "name": "dkfjhkd",
-      "address": "dlfkjdslk",
-      "phoneNo": "3534",
-      "id": 2
-    },
-    {
-      "name": "ksjhfk",
-      "address": "kejkjwe",
-      "phoneNo": "234234",
-      "id": 3
-    },
-    {
-      "name": "sonu",
-      "address": "Nashville",
-      "phoneNo": "3535645654",
-      "id": 4
-    },
-    {
-      "name": "aaaa",
-      "address": "aaaaa",
-      "phoneNo": "11111",
-      "id": 5
+      "address": "Franklin, tn",
+      "phoneNo": "6156688693",
+      "id": 1
     }
   ]
 }
