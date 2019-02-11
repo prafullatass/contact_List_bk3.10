@@ -8,6 +8,7 @@ const createHTML = (contactInfo) => {
             <div> ${contactInfo.address}</div>
             <div> ${contactInfo.phoneNo} </div>
             <button id = "deleteButton--${contactInfo.id}">Delete ${contactInfo.name}</button>
+            <button id = "editButton--${contactInfo.id}">Edit ${contactInfo.name}</button>
         </section>
     `
 }

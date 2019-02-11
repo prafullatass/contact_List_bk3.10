@@ -10,6 +10,7 @@
 // ]
 import contactData from "./DataManager"
 import contactList from "./ContactList"
+const $ = document.querySelector.bind(document)
 
 const contactArray = () => {
     contactData.getContacts().then(contacts => {
@@ -39,12 +40,29 @@ const contactCollection = {
     },
     search: (whatToSearch) => contactArray.find(contact => contact.includes(whatToSearch)),
     delete: () => {
-        const contactListEl = document.querySelector(".contactList")
-        contactListEl.addEventListener("click", (event) => {
+        $(".contactList").addEventListener("click", (event) => {
             if (event.target.id.startsWith("deleteButton--")) {
                 const contactId = event.target.id.split("--")[1]
                 contactData.deleteContact(contactId)
                     .then(contactList)
+            }
+        })
+
+    },
+
+    edit: () => {
+        const contactListEl = document.querySelector(".contactList")
+        contactListEl.addEventListener("click", (event) => {
+            if (event.target.id.startsWith("editButton--")) {
+                const contactId = event.target.id.split("--")[1]
+                contactData.getSingleContact(contactId)
+                    .then(contact => {
+                        $("#contactName").value = contact.name
+                        $("#contactAddress").value = contact.address
+                        $("#contactPhoneNo").value = contact.phoneNo
+                        $("#contactId").value = contactId
+                        $("#addNewContact").textContent = "Update Contact"
+                    })
             }
         })
 

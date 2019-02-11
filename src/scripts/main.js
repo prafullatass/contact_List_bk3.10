@@ -3,4 +3,8 @@ import addNewContact  from "./ContactForm"
 import contactCollection from "./ContactCollection"
 
 addNewContact()
-contactList().then (contactCollection.delete)
+contactList().then (() => {
+    contactCollection.delete()
+    contactCollection.edit()
+
+})
